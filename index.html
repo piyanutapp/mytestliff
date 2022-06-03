@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="isVersion"><b>This version is: 1.0.1</b></p>
+  <p id="TestTest"><b>This version: 1.0.1</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -73,10 +73,9 @@
         await liff.sendMessages
         ([
           {
-            "type": "sticker",
-            "stickerId": 1,
-            "packageId": 1
-          }
+            "type": "text",
+            "text": "Hello, World!",
+          },
         ])
         alert("Message sent")
       }
@@ -122,7 +121,7 @@
     }
 
     async function main() {
-      //alert("LINE Developers x Skooldio")
+      alert("This version: 1.0.1")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
       getEnvironment()
       getUserProfile()
