@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.5</b> </p>
+  <p id="TestTest"><b>This version: 1.0.6</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -79,6 +79,10 @@
             "type": "sticker",
             "stickerId": 1,
             "packageId": 1
+          },
+          {
+            "type": "text",
+            "text": liff.getProfile().displayName
           }
         ])
         alert("Message sent")
@@ -125,7 +129,7 @@
     }
 
     async function main() {
-      alert("This version: 1.0.5")
+      alert("This version: 1.0.6")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
       getEnvironment()
       getUserProfile()
