@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -75,7 +75,7 @@
     {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+      document.getElementById("userId").append(profile.userId);
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
     }
