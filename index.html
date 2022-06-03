@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.1</b> </p>
+  <p id="TestTest"><b>This version: 1.0.2</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -63,7 +63,18 @@
     function openWindow() {
     }
 
-    async function getFriendship() {
+    async function getFriendship() 
+    {
+      const friend = await liff.getFriendship()
+      doucment.getElementById("friendship").append(friend.friendFlag)
+
+      if(!firend.friendFlag)
+      {
+        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม"))
+        {
+          window.location = "https://liff.line.me/1645278921-kWRPP32q/?accountId=qoi9125z"
+        }
+      }
     }
 
     async function sendMsg() 
@@ -125,12 +136,12 @@
     }
 
     async function main() {
-      alert("This version: 1.0.1")
+      alert("This version: 1.0.2")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
