@@ -70,10 +70,11 @@
     {
       if (liff.getContext().type !== "none" && liff.getContext().type !== "external")
       {
+        const profile = await liff.getProfile()
         await liff.sendMessages([
           {
             "type": "text",
-            "text": "App, TestJa!",
+            "text": (profile.displayName).append(", TestJa!"),
           },
           {
             "type": "sticker",
