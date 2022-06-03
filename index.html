@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.4</b> </p>
+  <p id="TestTest"><b>This version: 1.0.5</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -60,7 +60,13 @@
     async function scanCode() {
     }
 
-    function openWindow() {
+    function openWindow() 
+    {
+      liff.openWindow
+      ({
+        url: "https://line.me",
+        external: true
+      })
     }
 
     async function getFriendship() 
@@ -136,7 +142,7 @@
     }
 
     async function main() {
-      alert("This version: 1.0.4")
+      alert("This version: 1.0.5")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
       getEnvironment()
       getUserProfile()
