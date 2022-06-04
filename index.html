@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.11</b> </p>
+  <p id="TestTest"><b>This version: 1.0.12</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -48,7 +48,15 @@
     function createUniversalLink() {
     }
 
-    async function shareMsg() {
+    async function shareMsg() 
+    {
+      await liff.shareTargetPicker
+      ([
+        {
+          "type": "text",
+          "text": "This message was sent by ShareTargetPicker"
+        }
+      ])
     }
 
     function logOut() 
