@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.7</b> </p>
+  <p id="TestTest"><b>This version: 1.0.8</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -147,12 +147,16 @@
     }
 
     async function main() {
-      alert("This version: 1.0.7")
+      alert("This version: 1.0.8")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn())
+      {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      }
       // createUniversalLink()
     }
     main()
