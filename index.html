@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p id="TestTest"><b>This version: 1.0.9</b> </p>
+  <p id="TestTest"><b>This version: 1.0.10</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
@@ -51,7 +51,10 @@
     async function shareMsg() {
     }
 
-    function logOut() {
+    function logOut() 
+    {
+      liff.logOut()
+      window.location.reload()
     }
 
     function closed() 
@@ -147,7 +150,7 @@
     }
 
     async function main() {
-      alert("This version: 1.0.9")
+      //alert("This version: 1.0.9")
       await liff.init({ liffId: "1657128669-zJ253WOJ" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn())
