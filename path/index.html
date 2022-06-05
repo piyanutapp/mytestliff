@@ -20,5 +20,35 @@
     const params = new URLSearchParams(queryString);
     document.getElementById("param").append(params.get("param"));
   </script>
+
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+    async function getUserProfile() 
+    {
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId);
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+    }
+
+    async function main() 
+    {
+      //alert("This version: 1.0.9")
+      await liff.init({ liffId: "1657128669-zJ253WOJ" })
+      if (liff.isLoggedIn())
+      {
+        getUserProfile()
+      }
+      else
+      {
+        liff.login
+        ({
+          redirectUri: "https://piyanutapp.github.io/mytestliff/path"
+        })
+      }
+    }
+  </script>
 </body>
 </html>
