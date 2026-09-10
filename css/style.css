@@ -31,3 +31,17 @@ p {
   display: block;
   overflow: auto
 }
+
+.mrf-link {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  margin: 18px auto 8px;
+  border-radius: 8px;
+  background: #176b5b;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
